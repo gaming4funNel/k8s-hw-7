@@ -21,7 +21,6 @@ spec:
           mountPath: /input
       - name: multitool
         image: wbitt/network-multitool:latest
-        command: ["sh", "-c", "tail -f /output/data.txt"]
         volumeMounts:
         - name: my-volume
           mountPath: /output
@@ -33,6 +32,6 @@ spec:
       volumes:
         - name: my-volume
           persistentVolumeClaim:
-          claimName: my-local-pvc
+            claimName: my-local-pvc
 
 
